@@ -14,10 +14,6 @@ import { useSnackbar } from "notistack";
 
 const Recipe = ({ item }) => {
   const [user] = useAuthState(auth);
-  const { enqueueSnackbar } = useSnackbar();
-  const handleClickVariant = (variant) => () => {
-    enqueueSnackbar("Favorit berhasil ditambahkan!", { variant });
-  };
 
   const onFavoriteClicked = () => {
     createFavorite(
@@ -30,10 +26,6 @@ const Recipe = ({ item }) => {
       user.email
     );
   };
-
-  useEffect(() => {
-    handleClickVariant("success");
-  }, [handleClickVariant]);
 
   return (
     <Card sx={{ maxWidth: 345, minWidth: 345 }}>
