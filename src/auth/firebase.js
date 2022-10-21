@@ -8,6 +8,16 @@ import {
   signOut,
 } from "firebase/auth";
 
+import {
+  addDoc,
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  serverTimestamp,
+  where,
+} from "firebase/firestore";
+
 // TODO: Add SDKs for Firebase products that you want to use
 
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -28,6 +38,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
+
+const db = getFirestore(app);
+
+const favoritesColRef = collection(db, "favorites");
 
 const register = async (email, password) => {
   try {
@@ -59,4 +73,41 @@ const logOut = async () => {
   }
 };
 
-export { auth, register, logIn, logOut };
+const createFavorite = async (
+  key,
+  thumb,
+  title,
+  times,
+  serving,
+  difficulty,
+  email
+) => {
+  return addDoc(favoritesColRef, {
+    key,
+    thumb,
+    title,
+    times,
+    serving,
+    difficulty,
+    email,
+    createdAt: serverTimestamp(),
+  });
+};
+
+const allFavorites = () => {
+  return getDocs(favoritesColRef);
+};
+
+const getFavorites = async (email) => {
+  return query(favoritesColRef, where("email", "==", email));
+};
+
+export {
+  auth,
+  register,
+  logIn,
+  logOut,
+  createFavorite,
+  getFavorites,
+  allFavorites,
+};

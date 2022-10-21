@@ -19,6 +19,7 @@ import { auth, logIn, register } from "../auth/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
 import SocialLogin from "./SocialLogin";
+import Copyright from "./Copyright";
 
 const theme = createTheme({
   palette: {
@@ -154,7 +155,7 @@ const LoginOrRegisterForm = ({ loginOrRegister }) => {
             <SocialLogin setError={setError} />
           </Box>
         </Box>
-        {/* <Copyright sx={{ mt: 1 }} /> */}
+        <Copyright sx={{ mt: 1 }} />
       </Container>
     </ThemeProvider>
   );

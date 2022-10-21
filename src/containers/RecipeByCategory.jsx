@@ -2,6 +2,8 @@ import React from "react";
 import { Box, Container, CssBaseline, Paper, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import NavBar from "../components/NavBar";
+import CategoryDetilList from "../components/CategoryDetilList";
+import { Link } from "react-router-dom";
 
 const theme = createTheme({
   palette: {
@@ -9,7 +11,7 @@ const theme = createTheme({
   },
 });
 
-const HomePage = () => {
+const RecipeByCategory = () => {
   return (
     <ThemeProvider theme={theme}>
       <NavBar />
@@ -24,15 +26,26 @@ const HomePage = () => {
             marginTop: 3,
             display: "flex",
             flexDirection: "column",
-            // alignItems: "center",
           }}
         >
-          <Typography variant="h3">HomePage</Typography>
-          <Typography variant="h5">HomePage</Typography>
+          <Link to="/category" style={{ textDecoration: "none" }}>
+            <Typography
+              variant="h4"
+              sx={{
+                mb: 3,
+                fontWeight: "bold",
+                fontFamily: "monospace",
+                fontStyle: "oblique",
+              }}
+            >
+              Category
+            </Typography>
+          </Link>
+          <CategoryDetilList />
         </Box>
       </Container>
     </ThemeProvider>
   );
 };
 
-export default HomePage;
+export default RecipeByCategory;
