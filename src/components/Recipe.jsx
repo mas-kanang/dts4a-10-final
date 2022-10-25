@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   Typography,
   CardMedia,
@@ -10,7 +10,6 @@ import {
 import { FavoriteOutlined } from "@mui/icons-material";
 import { auth, createFavorite } from "../auth/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useSnackbar } from "notistack";
 
 const Recipe = ({ item }) => {
   const [user] = useAuthState(auth);
@@ -28,7 +27,7 @@ const Recipe = ({ item }) => {
   };
 
   return (
-    <Card sx={{ maxWidth: 345, minWidth: 345 }}>
+    <Card sx={{ minWidth: 345 }}>
       <CardMedia
         component="img"
         height="140"

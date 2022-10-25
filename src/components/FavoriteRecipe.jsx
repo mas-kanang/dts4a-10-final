@@ -3,7 +3,7 @@ import { Typography, CardMedia, CardContent, Card } from "@mui/material";
 
 const FavoriteRecipe = ({ item }) => {
   return (
-    <Card sx={{ maxWidth: 345, minWidth: 345 }}>
+    <Card sx={{ minWidth: 345 }}>
       <CardMedia
         component="img"
         height="140"

@@ -3,6 +3,7 @@ import { Box, Container, CssBaseline, Paper, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import NavBar from "../components/NavBar";
 import CategoryList from "../components/CategoryList";
+import Copyright from "../components/Copyright";
 
 const theme = createTheme({
   palette: {
@@ -40,6 +41,7 @@ const Category = () => {
           </Typography>
           <CategoryList />
         </Box>
+        <Copyright sx={{ m: 3 }} />
       </Container>
     </ThemeProvider>
   );
