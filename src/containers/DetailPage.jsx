@@ -1,9 +1,9 @@
 import React from "react";
-import { Box, Container, CssBaseline, Paper, Typography } from "@mui/material";
+import { Box, Container, CssBaseline, Paper } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import NavBar from "../components/layout/NavBar";
-import FavoriteList from "../components/favorite/FavoriteList";
 import Copyright from "../components/layout/Copyright";
+import DetailRecipe from "../components/detail/DetailRecipe";
 
 const theme = createTheme({
   palette: {
@@ -28,16 +28,7 @@ const Favorite = () => {
             flexDirection: "column",
           }}
         >
-          <Typography
-            variant="h4"
-            sx={{
-              mb: 3,
-              fontWeight: "bold",
-            }}
-          >
-            Favorite
-          </Typography>
-          <FavoriteList />
+          <DetailRecipe />
         </Box>
         <Copyright sx={{ m: 3 }} />
       </Container>

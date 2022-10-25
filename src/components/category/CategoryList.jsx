@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import React from "react";
-import { useCategoryQuery } from "../services/recipeAPI";
+import { useCategoryQuery } from "../../services/recipeAPI";
 import Category from "./Category";
 
 const CategoryList = () => {

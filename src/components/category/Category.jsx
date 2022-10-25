@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Category = ({ item }) => {
   return (
     <Link to={`/category/${item.key}`} style={{ textDecoration: "none" }}>
-      <Card sx={{ maxWidth: 345, minWidth: 345 }}>
+      <Card sx={{ minWidth: 345 }}>
         <CardContent sx={{ backgroundColor: "#2E7D32" }}>
           <Typography
             gutterBottom

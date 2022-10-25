@@ -1,8 +1,10 @@
 import React from "react";
 import { Box, Container, CssBaseline, Paper, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import NavBar from "../components/NavBar";
-import Copyright from "../components/Copyright";
+import NavBar from "../components/layout/NavBar";
+import Copyright from "../components/layout/Copyright";
+import Search from "../components/layout/Search";
+import { Link } from "react-router-dom";
 
 const theme = createTheme({
   palette: {
@@ -25,11 +27,20 @@ const HomePage = () => {
             marginTop: 3,
             display: "flex",
             flexDirection: "column",
-            // alignItems: "center",
           }}
         >
-          <Typography variant="h3">HomePage</Typography>
-          <Typography variant="h5">HomePage</Typography>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Typography
+              variant="h4"
+              sx={{
+                mb: 2,
+                fontWeight: "bold",
+              }}
+            >
+              Home
+            </Typography>
+          </Link>
+          <Search />
         </Box>
         <Copyright sx={{ m: 3 }} />
       </Container>

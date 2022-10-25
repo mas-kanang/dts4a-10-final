@@ -1,8 +1,8 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useCategoryListQuery } from "../services/recipeAPI";
-import Recipe from "./Recipe";
+import { useCategoryListQuery } from "../../services/recipeAPI";
+import Recipe from "../recipe/Recipe";
 
 const CategoryDetilList = () => {
   const { id } = useParams();

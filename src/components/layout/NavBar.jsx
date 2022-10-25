@@ -5,6 +5,7 @@ import {
   CategoryOutlined,
   Logout,
   Login,
+  HomeOutlined,
 } from "@mui/icons-material";
 import { Avatar, Button, ListItemIcon, Tooltip } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
@@ -16,7 +17,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, logOut } from "../auth/firebase";
+import { auth, logOut } from "../../auth/firebase";
 
 export default function MenuAppBar() {
   const [user] = useAuthState(auth);
@@ -48,7 +49,13 @@ export default function MenuAppBar() {
           />
           <Typography
             variant="h4"
-            sx={{ flexGrow: 1, verticalAlign: "center", mt: 1 }}
+            onClick={() => navigate("/")}
+            sx={{
+              flexGrow: 1,
+              verticalAlign: "center",
+              mt: 1,
+              cursor: "pointer",
+            }}
           >
             Resep Nusantara
           </Typography>
@@ -125,6 +132,14 @@ export default function MenuAppBar() {
             transformOrigin={{ horizontal: "right", vertical: "top" }}
             anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
           >
+            <MenuItem>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <ListItemIcon>
+                  <HomeOutlined fontSize="small" />
+                </ListItemIcon>
+                Home
+              </Link>
+            </MenuItem>
             <MenuItem>
               <Link to="/category" style={{ textDecoration: "none" }}>
                 <ListItemIcon>

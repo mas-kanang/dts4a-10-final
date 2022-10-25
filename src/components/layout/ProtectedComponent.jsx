@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { auth } from "../auth/firebase";
+import { auth } from "../../auth/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { Box, LinearProgress } from "@mui/material";

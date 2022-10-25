@@ -8,13 +8,22 @@ import {
   Card,
 } from "@mui/material";
 import { FavoriteOutlined } from "@mui/icons-material";
-import { auth, createFavorite } from "../auth/firebase";
+import { auth, createFavorite } from "../../auth/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useSnackbar } from "notistack";
+import { Link } from "react-router-dom";
 
 const Recipe = ({ item }) => {
   const [user] = useAuthState(auth);
+  const { enqueueSnackbar } = useSnackbar();
 
   const onFavoriteClicked = () => {
+    if (!user) {
+      enqueueSnackbar("Silahkan login untuk menambahkan favorit", {
+        variant: "error",
+      });
+      return;
+    }
     createFavorite(
       item.key,
       item.thumb,
@@ -28,17 +37,19 @@ const Recipe = ({ item }) => {
 
   return (
     <Card sx={{ minWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image={item.thumb}
-        alt={item.key}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {item.title}
-        </Typography>
-      </CardContent>
+      <Link to={`/${item.key}`} style={{ textDecoration: "none" }}>
+        <CardMedia
+          component="img"
+          height="140"
+          image={item.thumb}
+          alt={item.key}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div" color="black">
+            {item.title}
+          </Typography>
+        </CardContent>
+      </Link>
       <CardActions onClick={onFavoriteClicked}>
         <Button size="sx">
           <FavoriteOutlined />

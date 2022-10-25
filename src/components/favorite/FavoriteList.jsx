@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import React, { useCallback, useEffect, useState } from "react";
-import { allFavorites } from "../auth/firebase";
+import { allFavorites } from "../../auth/firebase";
 import FavoriteRecipe from "./FavoriteRecipe";
 
 const FavoriteList = () => {
