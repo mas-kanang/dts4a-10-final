@@ -26,11 +26,11 @@ import {
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: "dts2022-rea4.firebaseapp.com",
-  projectId: "dts2022-rea4",
-  storageBucket: "dts2022-rea4.appspot.com",
-  messagingSenderId: "209272837690",
-  appId: "1:209272837690:web:d3624b61bc0c42ad938703",
+  authDomain: "dts2022-rea4-c5baf.firebaseapp.com",
+  projectId: "dts2022-rea4-c5baf",
+  storageBucket: "dts2022-rea4-c5baf.appspot.com",
+  messagingSenderId: "488491564925",
+  appId: "1:488491564925:web:c38487c58082abad5d1614"
 };
 
 // Initialize Firebase

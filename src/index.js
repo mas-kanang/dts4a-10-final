@@ -9,6 +9,7 @@ import NotFound404 from "./containers/NotFound404";
 import ProtectedComponent from "./components/ProtectedComponent";
 import HomePage from "./containers/HomePage";
 import Category from "./containers/Category";
+import Recipe from "./containers/Recipe";
 import { recipeAPI } from "./services/recipeAPI";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import RecipeByCategory from "./containers/RecipeByCategory";
@@ -44,6 +45,14 @@ root.render(
               element={
                 <ProtectedComponent>
                   <Favorite />
+                </ProtectedComponent>
+              }
+            />
+            <Route
+              path="/recipe"
+              element={
+                <ProtectedComponent>
+                  <RecipeByCategory />
                 </ProtectedComponent>
               }
             />

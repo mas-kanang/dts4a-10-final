@@ -2,10 +2,12 @@ import React from "react";
 import { Box, Container, CssBaseline, Paper, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import NavBar from "../components/NavBar";
+import Home from "../components/home/Home";
+
 
 const theme = createTheme({
   palette: {
-    mode: "light",
+    mode: "dark",
   },
 });
 
@@ -15,6 +17,7 @@ const HomePage = () => {
       <NavBar />
       <Container variant="main" maxWidth="lg">
         <CssBaseline />
+        <Home />
 
         <Box
           component={Paper}
@@ -27,8 +30,7 @@ const HomePage = () => {
             // alignItems: "center",
           }}
         >
-          <Typography variant="h3">HomePage</Typography>
-          <Typography variant="h5">HomePage</Typography>
+
         </Box>
       </Container>
     </ThemeProvider>
