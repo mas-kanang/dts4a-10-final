@@ -1,16 +1,17 @@
 import React from "react";
-import { CardMedia, Card } from "@mui/material";
+import { CardMedia, Card, Skeleton } from "@mui/material";
 
 const DetailCard = ({ data }) => {
   return (
-    <Card>
-      <CardMedia
-        component="img"
-        // height="140"
-        image={data.thumb}
-        alt={data.key}
-      />
-    </Card>
+    <>
+      {data.thumb ? (
+        <Card>
+          <CardMedia component="img" image={data.thumb} alt={data.key} />
+        </Card>
+      ) : (
+        <Skeleton variant="rectangular" height={200} />
+      )}
+    </>
   );
 };
 

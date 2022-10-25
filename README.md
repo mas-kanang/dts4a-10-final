@@ -1,19 +1,27 @@
-# DTS REA4 Final Project
+## Guidelines
 
-Ketentuan lengkap bisa dilihat di [Final Project Guidelines](https://docs.google.com/document/d/122KyWNQ4xxU4aFwWbM4vIfH7LM4AH2CZEZa3YsEHjCk). 
+Ketentuan lengkap bisa dilihat di [Final Project Guidelines](https://docs.google.com/document/d/122KyWNQ4xxU4aFwWbM4vIfH7LM4AH2CZEZa3YsEHjCk).
 
-## Daftar pair
+## DTS REA4 Final Project Team 39
 
-Tugas dikerjakan secara berpasangan, untuk daftar kelompok bisa dilihat pada masing-masing Classroom atau Discord Class.
+- Team Member : Team 10 Ahmad Muzaki Munir (1523649113101291), Dewangga Pramana Putra (1523649113101177)
+- Tema Project : Resep Nusantara
+- Url Project :
+- Figma :
+- API : https://github.com/tomorisakura/unofficial-masakapahariini-api
 
-## Fork and Clone
+## Feature Utama
 
-Mohon perwakilan dari pair bisa melakukan fork repo ini dan clone, untuk repositori yang di fork menggunakan penamaan:
+- Login Firebase :
+  Email & Password, With Google, and With Github ✅
+- Logout ✅
+- Register ✅
+- Home (Halaman Utama) ✅
+- Menu Category ✅
+- Menu Favorite ✅
+- Detail (Halaman Detail) ✅
 
-`dts4[a/b/c]-[nomor pair]-final`
+## Feature Unik
 
-Contoh: `dts4a-01-final`
-
-## Branching, commit
-
-Branch dapat sesuai dengan kebutuhan dan kesepakatan bersama dalam pair, namun hasil akhirnya harus di merge ke branch `main` dan di push ke Github. Pastikan hasil akhir kode sudah ter-push!
+- Search ✅
+- submit to firestore ✅
