@@ -58,23 +58,16 @@ const DetailRight = ({ data }) => {
         </Typography>
         {data.ingredient.map((ingredients, index) => {
           return (
-            <div key={index}>
-              <span
-                component="div"
-                variant="subtitle1"
-                style={{ textAlign: "justify" }}
-              >
-                {ingredients}
-              </span>
-              {ingredients.length - 1 === index ? "" : ", "}
-            </div>
+            <Typography variant="subtitle1" key={index}>
+              {ingredients}
+              {data.ingredient.length - 1 === index ? "" : ", "}
+            </Typography>
           );
         })}
       </Card>
       <Card sx={{ padding: "1em 1em 1em 1em " }}>
         <Box>
           <Typography
-            component="div"
             variant="subtitle1"
             sx={{
               mb: 2,
@@ -85,15 +78,9 @@ const DetailRight = ({ data }) => {
           </Typography>
           {data.step.map((steps, index) => {
             return (
-              <div key={index}>
-                <span
-                  component="div"
-                  variant="subtitle1"
-                  style={{ textAlign: "justify" }}
-                >
-                  {steps}
-                </span>
-              </div>
+              <Typography variant="subtitle1" key={index}>
+                {steps}
+              </Typography>
             );
           })}
         </Box>
