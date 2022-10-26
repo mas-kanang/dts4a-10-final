@@ -59,10 +59,14 @@ const DetailRight = ({ data }) => {
         {data.ingredient.map((ingredients, index) => {
           return (
             <div key={index}>
-              <span component="div" variant="subtitle1">
+              <span
+                component="div"
+                variant="subtitle1"
+                style={{ textAlign: "justify" }}
+              >
                 {ingredients}
               </span>
-              {ingredients.length > index + 1 ? ", " : ""}
+              {ingredients.length - 1 === index ? "" : ", "}
             </div>
           );
         })}
@@ -82,9 +86,13 @@ const DetailRight = ({ data }) => {
           {data.step.map((steps, index) => {
             return (
               <div key={index}>
-                <Typography component="div" variant="subtitle1">
+                <span
+                  component="div"
+                  variant="subtitle1"
+                  style={{ textAlign: "justify" }}
+                >
                   {steps}
-                </Typography>
+                </span>
               </div>
             );
           })}
