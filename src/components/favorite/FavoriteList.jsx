@@ -33,12 +33,12 @@ const FavoriteList = () => {
     fetchData();
   }, [fetchData]);
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={2}>
       {loading ? (
         <LinearProgress />
       ) : (
         favorite?.map((recipe, index) => (
-          <Grid item xs key={index}>
+          <Grid item xs={12} md={6} lg={4} key={index}>
             <FavoriteRecipe item={recipe} />
           </Grid>
         ))

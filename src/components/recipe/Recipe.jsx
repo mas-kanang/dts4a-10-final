@@ -36,14 +36,9 @@ const Recipe = ({ item }) => {
   };
 
   return (
-    <Card sx={{ minWidth: 345 }}>
+    <Card>
       <Link to={`/${item.key}`} style={{ textDecoration: "none" }}>
-        <CardMedia
-          component="img"
-          height="140"
-          image={item.thumb}
-          alt={item.key}
-        />
+        <CardMedia component="img" image={item.thumb} alt={item.key} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" color="black">
             {item.title}

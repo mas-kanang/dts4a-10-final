@@ -13,7 +13,7 @@ const CategoryDetilList = () => {
         <LinearProgress />
       ) : (
         data?.results?.map((recipe) => (
-          <Grid item xs key={recipe.key}>
+          <Grid item xs={12} md={6} lg={4} key={recipe.key}>
             <Recipe item={recipe} />
           </Grid>
         ))

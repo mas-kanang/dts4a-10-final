@@ -25,7 +25,7 @@ const DetailRecipe = () => {
           >
             {data.results.title}
           </Typography>
-          <Grid container spacing={2} padding={2}>
+          <Grid container spacing={2} padding={1}>
             <Grid item xs={12} s={6} md={6}>
               <DetailCard data={data.results} />
               <DetailDesc data={data.results} />

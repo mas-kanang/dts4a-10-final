@@ -71,17 +71,15 @@ const Search = () => {
 
       {loading && <LinearProgress />}
       {!loading && data.length > 0 && (
-        <div>
-          <Grid container spacing={3}>
-            {data.map((item, index) => {
-              return (
-                <Grid item xs key={index}>
-                  <Recipe item={item} />
-                </Grid>
-              );
-            })}
-          </Grid>
-        </div>
+        <Grid container spacing={2}>
+          {data.map((item, index) => {
+            return (
+              <Grid item xs={12} md={6} lg={4} key={index}>
+                <Recipe item={item} />
+              </Grid>
+            );
+          })}
+        </Grid>
       )}
       {!loading && data.length === 0 && <div>Data Tidak Ditemukan</div>}
     </>

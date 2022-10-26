@@ -48,7 +48,7 @@ export default function MenuAppBar() {
             onClick={() => navigate("/")}
           />
           <Typography
-            variant="h4"
+            variant="h5"
             onClick={() => navigate("/")}
             sx={{
               flexGrow: 1,
