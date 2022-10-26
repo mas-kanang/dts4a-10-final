@@ -1,9 +1,10 @@
 import React from "react";
 import { Box, Container, CssBaseline, Paper, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import NavBar from "../components/NavBar";
-import CategoryDetilList from "../components/CategoryDetilList";
-import { Link } from "react-router-dom";
+import NavBar from "../components/layout/NavBar";
+import CategoryDetilList from "../components/category/CategoryDetilList";
+import { Link, useParams } from "react-router-dom";
+import Copyright from "../components/layout/Copyright";
 
 const theme = createTheme({
   palette: {
@@ -12,6 +13,7 @@ const theme = createTheme({
 });
 
 const RecipeByCategory = () => {
+  const { id } = useParams();
   return (
     <ThemeProvider theme={theme}>
       <NavBar />
@@ -28,21 +30,36 @@ const RecipeByCategory = () => {
             flexDirection: "column",
           }}
         >
-          <Link to="/category" style={{ textDecoration: "none" }}>
+          <Box
+            sx={{
+              padding: 2,
+              display: "flex",
+              gap: 2,
+              mb: 2,
+            }}
+          >
+            <Link to="/category" style={{ textDecoration: "none" }}>
+              <Typography
+                variant="h4"
+                sx={{
+                  fontWeight: "bold",
+                }}
+              >
+                Category
+              </Typography>
+            </Link>
             <Typography
               variant="h4"
               sx={{
-                mb: 3,
                 fontWeight: "bold",
-                fontFamily: "monospace",
-                fontStyle: "oblique",
               }}
             >
-              Category
+              {id.replace(/-/gi, " ")}
             </Typography>
-          </Link>
+          </Box>
           <CategoryDetilList />
         </Box>
+        <Copyright sx={{ m: 3 }} />
       </Container>
     </ThemeProvider>
   );

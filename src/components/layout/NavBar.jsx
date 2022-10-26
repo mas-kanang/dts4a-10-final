@@ -5,6 +5,7 @@ import {
   CategoryOutlined,
   Logout,
   Login,
+  HomeOutlined,
 } from "@mui/icons-material";
 import { Avatar, Button, ListItemIcon, Tooltip } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
@@ -16,7 +17,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, logOut } from "../auth/firebase";
+import { auth, logOut } from "../../auth/firebase";
 
 export default function MenuAppBar() {
   const [user] = useAuthState(auth);
@@ -36,7 +37,7 @@ export default function MenuAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color="success">
+      <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
         <Toolbar>
           <Restaurant
             fontSize="large"
@@ -45,10 +46,18 @@ export default function MenuAppBar() {
             aria-label="menu"
             sx={{ mr: 2, cursor: "pointer" }}
             onClick={() => navigate("/")}
+            style={{color:"#000000"}}
           />
           <Typography
             variant="h4"
-            sx={{ flexGrow: 1, verticalAlign: "center", mt: 1 }}
+            onClick={() => navigate("/")}
+            sx={{
+              flexGrow: 1,
+              verticalAlign: "center",
+              mt: 1,
+              cursor: "pointer",
+            }}
+            style={{color:"#000000"}}
           >
             Resep Nusantara
           </Typography>
@@ -60,8 +69,10 @@ export default function MenuAppBar() {
                 alignItems: "center",
                 textAlign: "center",
               }}
+              style={{color:"#000000"}}
             >
               <Typography>
+
                 {user?.displayName ??
                   user?.reloadUserInfo?.screenName ??
                   user?.email}
@@ -86,6 +97,7 @@ export default function MenuAppBar() {
               }}
               color="inherit"
               startIcon={<Login />}
+              style={{color:"#000000"}}
             >
               Login
             </Button>
@@ -125,6 +137,14 @@ export default function MenuAppBar() {
             transformOrigin={{ horizontal: "right", vertical: "top" }}
             anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
           >
+            <MenuItem>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <ListItemIcon>
+                  <HomeOutlined fontSize="small" />
+                </ListItemIcon>
+                Home
+              </Link>
+            </MenuItem>
             <MenuItem>
               <Link to="/category" style={{ textDecoration: "none" }}>
                 <ListItemIcon>

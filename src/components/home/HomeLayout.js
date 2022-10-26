@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
-import backgroundImage from "../../files/background.jpg";
+// import backgroundImage from "../../files/background.jpg";
 
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
@@ -36,7 +36,7 @@ function ProductHeroLayout(props) {
     <ProductHeroLayoutRoot>
       <Container
         sx={{
-          mt: 3,
+          mt: 9,
           mb: 14,
           display: 'flex',
           flexDirection: 'column',
@@ -45,7 +45,7 @@ function ProductHeroLayout(props) {
       >
         <img
           // src={backgroundImage}
-          // alt="food"
+          alt=""
           // width="147"
           // height="80"
         />

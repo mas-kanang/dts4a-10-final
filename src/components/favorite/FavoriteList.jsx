@@ -1,11 +1,11 @@
-import { Grid } from "@mui/material";
+import { Grid, LinearProgress } from "@mui/material";
 import React, { useCallback, useEffect, useState } from "react";
-import { allFavorites } from "../auth/firebase";
+import { allFavorites } from "../../auth/firebase";
 import FavoriteRecipe from "./FavoriteRecipe";
 
 const FavoriteList = () => {
   const [favorite, setFavorite] = useState([]);
-  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const fetchData = useCallback(() => {
     allFavorites()
@@ -23,9 +23,10 @@ const FavoriteList = () => {
           return final.concat([current]);
         }, []);
         setFavorite(result);
+        setLoading(false);
         return;
       })
-      .catch((err) => setError(err));
+      .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
@@ -33,8 +34,8 @@ const FavoriteList = () => {
   }, [fetchData]);
   return (
     <Grid container spacing={3}>
-      {error ? (
-        <>Ada error loh</>
+      {loading ? (
+        <LinearProgress />
       ) : (
         favorite?.map((recipe, index) => (
           <Grid item xs key={index}>

@@ -7,7 +7,7 @@ import {
 } from "firebase/auth";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../auth/firebase";
+import { auth } from "../../auth/firebase";
 
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();

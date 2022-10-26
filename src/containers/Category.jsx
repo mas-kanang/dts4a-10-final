@@ -1,8 +1,9 @@
 import React from "react";
 import { Box, Container, CssBaseline, Paper, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import NavBar from "../components/NavBar";
-import CategoryList from "../components/CategoryList";
+import NavBar from "../components/layout/NavBar";
+import CategoryList from "../components/category/CategoryList";
+import Copyright from "../components/layout/Copyright";
 
 const theme = createTheme({
   palette: {
@@ -30,16 +31,15 @@ const Category = () => {
           <Typography
             variant="h4"
             sx={{
-              mb: 3,
+              mb: 2,
               fontWeight: "bold",
-              fontFamily: "monospace",
-              fontStyle: "oblique",
             }}
           >
             Category
           </Typography>
           <CategoryList />
         </Box>
+        <Copyright sx={{ m: 3 }} />
       </Container>
     </ThemeProvider>
   );

@@ -6,15 +6,15 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginPage from "./containers/LoginPage";
 import RegisterPage from "./containers/RegisterPage";
 import NotFound404 from "./containers/NotFound404";
-import ProtectedComponent from "./components/ProtectedComponent";
+import ProtectedComponent from "./components/layout/ProtectedComponent";
 import HomePage from "./containers/HomePage";
 import Category from "./containers/Category";
-import Recipe from "./containers/Recipe";
 import { recipeAPI } from "./services/recipeAPI";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import RecipeByCategory from "./containers/RecipeByCategory";
 import Favorite from "./containers/Favorite";
 import { SnackbarProvider } from "notistack";
+import DetailPage from "./containers/DetailPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -40,19 +40,12 @@ root.render(
                 </ProtectedComponent>
               }
             />
+            <Route path="/:id" element={<DetailPage />} />
             <Route
               path="/favorite"
               element={
                 <ProtectedComponent>
                   <Favorite />
-                </ProtectedComponent>
-              }
-            />
-            <Route
-              path="/recipe"
-              element={
-                <ProtectedComponent>
-                  <RecipeByCategory />
                 </ProtectedComponent>
               }
             />

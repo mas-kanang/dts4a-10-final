@@ -2,13 +2,24 @@ import * as React from 'react';
 // import Button from '../components/Button';
 // import Typography from '../components/Typography';
 import { Button, Typography } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import ProductHeroLayout from "./HomeLayout";
 import { useNavigate } from "react-router-dom";
 import backgroundImage from "../../files/background.jpg";
 
+const theme = createTheme({
+  palette: {
+    neutral: {
+      main: '#ffb347',
+      contrastText: '#000000',
+    },
+  },
+});
+
 export default function Home() {
     const navigate = useNavigate();
   return (
+  <ThemeProvider theme={theme}>
     <ProductHeroLayout
       sxBackground={{
         backgroundImage: `url(${backgroundImage})`,
@@ -31,23 +42,24 @@ export default function Home() {
         variant="h5"
         sx={{ mb: 4, mt: { sx: 4, sm: 10 } }}
       >
-        Cari beberapa pilihan menu resep pilihan kami.
+        Cari beberapa pilihan menu pilihan kami.
       </Typography>
       <Button
-        color="secondary"
+        color="neutral"
         variant="contained"
         size="large"
         component="a"
         onClick={() => {
-          navigate("/Recipe");
+          navigate("/Category");
         }}
-        sx={{ minWidth: 200 }}
+        sx={{ minWidth: 250 }}
       >
-        Resep
+        Menu
       </Button>
       <Typography variant="body2" color="inherit" sx={{ mt: 2 }}>
         Temukan resep terbaik
       </Typography>
     </ProductHeroLayout>
+  </ThemeProvider>
   );
 }

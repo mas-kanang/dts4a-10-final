@@ -11,15 +11,15 @@ import {
   Alert,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import backgroundImage from "../files/background.jpg";
+import backgroundImage from "../../files/background.jpg";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { useNavigate } from "react-router-dom";
-import { auth, logIn, register } from "../auth/firebase";
+import { auth, logIn, register } from "../../auth/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
 import SocialLogin from "./SocialLogin";
-import Copyright from "./Copyright";
+import Copyright from "../layout/Copyright";
 
 const theme = createTheme({
   palette: {
