@@ -37,7 +37,7 @@ const Recipe = ({ item }) => {
 
   return (
     <Card>
-      <Link to={`/${item.key}`} style={{ textDecoration: "none" }}>
+      <Link to={`/detail/${item.key}`} style={{ textDecoration: "none" }}>
         <CardMedia component="img" image={item.thumb} alt={item.key} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div" color="black">

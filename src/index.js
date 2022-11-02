@@ -40,7 +40,7 @@ root.render(
                 </ProtectedComponent>
               }
             />
-            <Route path="/:id" element={<DetailPage />} />
+            <Route path="/detail/:id" element={<DetailPage />} />
             <Route
               path="/favorite"
               element={

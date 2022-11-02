@@ -13,7 +13,7 @@ const DetailRecipe = () => {
   return (
     <>
       {error ? (
-        <>Ada error disini</>
+        <>Data tidak ditemukan</>
       ) : isLoading ? (
         <LinearProgress />
       ) : (
